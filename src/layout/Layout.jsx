@@ -1,30 +1,34 @@
-import { Outlet } from "react-router-dom"
+import { Outlet, Link, useLocation} from "react-router-dom"
 
 const layout = () => {
-  return (
-    <div className="md:flex md:min-h-screen">
-        <div className="md:w-1/4 bg-blue-900 px-5 py-10" >
-            <h2 className="text-4xl font-black text-center text-white">CRM - Clientes</h2>
-            <nav className="mt-10">
-            <a 
-                className="text-white text-2xl block mt-2 hover:text-blue-300"
-                href="/clientes"
-                >Clientes</a>
+    const location = useLocation()
 
-            <a 
-                className="text-white text-2xl block mt-2 hover:text-blue-300"
-                href="/clientes/nuevo"
-                >Nuevo Cliente</a>
-        </nav>
-        
-        </div>
+    const urlActual = location.pathname
 
-        <div className="md:w-3/4">
-            <Outlet />
+    return (
+        <div className="md:flex md:min-h-screen">
+            <div className="md:w-1/4 bg-blue-900 px-5 py-10" >
+                <h2 className={"text-4xl font-black text-center text-white"}>CRM - Clientes</h2>
+                <nav className="mt-10">
+                <Link 
+                    className={` ${urlActual ==='/clientes' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300`}
+                    to="/clientes"
+                    >Clientes</Link>
+
+                <Link
+                    className={`${urlActual ==='/clientes/nuevo' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300`}
+                    to="/clientes/nuevo"
+                    >Nuevo Cliente</Link>
+            </nav>
+            
+            </div>
+
+            <div className="md:w-3/4 p-10">
+                <Outlet />
+            </div>
+            
         </div>
-        
-    </div>
-  )
+    )
 }
 
 export default layout
