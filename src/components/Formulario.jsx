@@ -1,8 +1,12 @@
+import { useNavigate } from 'react-router-dom' //Hook para redireccionar
+
 import {Formik, Form, Field} from 'formik'
 import * as Yup from 'yup' //valida los formularios de formik
 import Alerta from './Alerta'
 
 const Formulario = () => {
+
+    const navigate = useNavigate()
 
     // Creación del esquema de validaciones (contienen los mismos fields del formulario)
     const nuevoClienteSchema = Yup.object().shape({
@@ -21,8 +25,26 @@ const Formulario = () => {
                      .typeError('El número no es válido'),
     })
 
-    const handleSubmit = (values) => {
-        console.log(values)
+    const handleSubmit = async (values) => {
+        try {
+            const url ='http://localhost:4000/clientes'
+            const respuesta = await fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(values),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+
+            const resultado = await respuesta.json()
+            console.log(resultado)
+
+            //navigate toma la url a donde queremos enviarlo
+            navigate('/clientes')
+
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return ( 
@@ -37,8 +59,9 @@ const Formulario = () => {
                     notas:''
                 }}
 
-                onSubmit={values => {
-                    handleSubmit(values)
+                onSubmit={async (values, {resetForm}) => {
+                    await handleSubmit(values)
+                    resetForm()
                 }}
 
                 validationSchema= {nuevoClienteSchema} //pasamos el esquema de validaciones
@@ -124,7 +147,7 @@ const Formulario = () => {
                             <input
                                 type="submit"
                                 value="Agregar Cliente"
-                                className='mt-5 w-full bg-blue-800 p-3 text-white uppercase font-bold text-lg'
+                                className='mt-5 w-full bg-blue-800 p-3 text-white uppercase font-bold text-lg hover:bg-blue-900 cursor-pointer'
                             />
                         </Form>
                 )}}

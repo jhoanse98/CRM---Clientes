@@ -1,0 +1,52 @@
+{
+  "clientes": [
+    {
+      "nombre": "Juan",
+      "empresa": "Jaime",
+      "email": "sebastian.marin.val@gmail.com",
+      "telefono": "",
+      "notas": "",
+      "id": 1
+    },
+    {
+      "nombre": "Carol",
+      "empresa": "Peletier",
+      "email": "carolpeletier@gmail.com",
+      "telefono": "31281312312",
+      "notas": "The last survivor",
+      "id": 2
+    },
+    {
+      "nombre": "Carol",
+      "empresa": "Peletier",
+      "email": "carolpeletier@gmail.com",
+      "telefono": "31281312312",
+      "notas": "The last survivor",
+      "id": 3
+    },
+    {
+      "nombre": "Harry",
+      "empresa": "Potter",
+      "email": "harrypotter@hogwarts.com",
+      "telefono": "31212312312",
+      "notas": "El mejor mago del mundo magico",
+      "id": 4
+    },
+    {
+      "nombre": "Lorena",
+      "empresa": "Loreal",
+      "email": "lorena@loreal.com",
+      "telefono": "3123123123",
+      "notas": "",
+      "id": 5
+    },
+    {
+      "nombre": "jaime",
+      "empresa": "lorenzo",
+      "email": "lorenzo@correo.com",
+      "telefono": "123123123213",
+      "notas": "",
+      "id": 6
+    }
+  ]
+}
