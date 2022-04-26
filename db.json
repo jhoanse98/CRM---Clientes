@@ -4,17 +4,9 @@
       "nombre": "Juan",
       "empresa": "Jaime",
       "email": "sebastian.marin.val@gmail.com",
-      "telefono": "",
+      "telefono": "3128137366",
       "notas": "",
       "id": 1
-    },
-    {
-      "nombre": "Carol",
-      "empresa": "Peletier",
-      "email": "carolpeletier@gmail.com",
-      "telefono": "31281312312",
-      "notas": "The last survivor",
-      "id": 2
     },
     {
       "nombre": "Carol",
@@ -25,14 +17,6 @@
       "id": 3
     },
     {
-      "nombre": "Harry",
-      "empresa": "Potter",
-      "email": "harrypotter@hogwarts.com",
-      "telefono": "31212312312",
-      "notas": "El mejor mago del mundo magico",
-      "id": 4
-    },
-    {
       "nombre": "Lorena",
       "empresa": "Loreal",
       "email": "lorena@loreal.com",
@@ -41,11 +25,11 @@
       "id": 5
     },
     {
-      "nombre": "jaime",
-      "empresa": "lorenzo",
-      "email": "lorenzo@correo.com",
-      "telefono": "123123123213",
-      "notas": "",
+      "nombre": "Misty",
+      "empresa": "Day",
+      "email": "mistyday@ahstory.com",
+      "telefono": "22222222",
+      "notas": "resurgimiento",
       "id": 6
     }
   ]
